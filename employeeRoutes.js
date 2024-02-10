@@ -16,6 +16,19 @@ router.get("/getEmployee", async (req, res) => {
   }
 });
 
+//find by id
+
+router.get("/getEmployee/:id", async (req, res) => {
+  try {
+    const employee = await Employee.findById(req.params.id);
+    return res.json({ Status: "Success", Result: employee });
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).json({ Error: "Server Error" });
+  }
+});
+
+
 //enroll new employee
 
 router.post("/create", async(req, res)=>{
