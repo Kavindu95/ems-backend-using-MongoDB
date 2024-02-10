@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./mongoDB");
-// const employeeRoutes = require("./employeeRoutes");
+ const employeeRoutes = require("./employeeRoutes");
 // const userRoutes = require("./userRoutes");
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(cors());
 
 connectDB();
 
-// app.use("/", employeeRoutes);
+ app.use("/", employeeRoutes);
 // app.use("/", userRoutes);
 
 app.listen(port, () => {
