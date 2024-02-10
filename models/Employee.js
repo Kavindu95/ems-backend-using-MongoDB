@@ -6,4 +6,6 @@ const EmployeeSchema = new mongoose.Schema({
   contact: String,
 });
 
+
+
 module.exports = mongoose.model("Employee", EmployeeSchema);
